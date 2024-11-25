@@ -32,3 +32,7 @@ body{
 .navbar-gradient {
     background: linear-gradient(to right, #071d9b, #8aa214); 
 }
+.custom-spinner {
+    color: #93b012; /* Couleur personnalisée, ici un orange vif */
+    position: relative;
+  }
