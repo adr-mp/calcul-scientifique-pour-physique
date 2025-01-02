@@ -1,5 +1,6 @@
 body{
     background-image: url("o.jpg");
+    background-attachment: fixed;
     
 }
 .container {
@@ -12,12 +13,10 @@ body{
 
 #ti{
     text-align: center;
-    color: rgb(228, 39, 22);
-    background-color: rgb(83, 215, 215);
+
 }
 .text-center{
-    border: solid;
-    background-color: rgb(210, 47, 207);
+
     display: inline
 
 
@@ -29,10 +28,125 @@ body{
 .navbar-nav .nav-item:last-child {
     margin-right: 0; 
 }   
-.navbar-gradient {
-    background: linear-gradient(to right, #071d9b, #8aa214); 
+#logo{
+    width: 5%;
 }
-.custom-spinner {
-    color: #93b012; /* Couleur personnalisée, ici un orange vif */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideIn {
+    from { width: 0; opacity: 0; }
+    to { width: 100%; opacity: 1; }
+  }
+
+  @keyframes particleFloat {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -10px); }
+    100% { transform: translate(0, 0); }
+  }
+
+
+
+  .containerr {
     position: relative;
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1e293b, #1e40af);
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s;
+    left: 23.6%;
+    margin-top: 1%;
+  }
+
+  .background-glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    filter: blur(40px);
+  }
+
+  .glow-1 {
+    top: -50px;
+    right: -50px;
+    background: rgba(59, 130, 246, 0.2);
+    animation: pulse 4s infinite;
+  }
+
+  .glow-2 {
+    bottom: -50px;
+    left: -50px;
+    background: rgba(147, 51, 234, 0.2);
+    animation: pulse 4s infinite 2s;
+  }
+
+  .icons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 8px;
+    animation: bounce 2s infinite;
+  }
+
+  .icon svg {
+    width: 24px;
+    height: 24px;
+    color: #60a5fa;
+  }
+
+  .title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 0;
+  }
+
+  .underline {
+    height: 2px;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    margin-top: 0.5rem;
+    animation: slideIn 1s forwards 1s;
+    opacity: 0;
+  }
+
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(96, 165, 250, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particleFloat 3s infinite;
   }
