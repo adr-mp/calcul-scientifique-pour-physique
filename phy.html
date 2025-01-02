@@ -8,33 +8,86 @@
     <link rel="stylesheet" href="ph.css">
 </head>
 <body>
- <nav class="navbar navbar-expand-lg navbar-dark navbar-gradient">
-    
-        <div class="spinner-grow spinner-grow-sm custom-spinner" role="status">
-            <span class="visually-hidden"></span>
-          </div>
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="statistique.html">Accueil</a>
-                    </li>
-                    <a class="navbar-brand" href="index.html">Fonctionnalités </a>
-                    
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">À propos</a>
-                    </li>
-                </ul>
-                <div class="clearfix">
+    <style>
+        .navbar-gradient {
+                  background: linear-gradient(to right, #8aa214,  #071d9b); 
+              }
+          </style>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-gradient">
+            <img id="logo" src="aaqq.png" alt="">
+          
+              <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav">
+                          
+                          <li class="nav-item">
+                              <a class="nav-link" href="statistique.html">Accueil</a>
+                          </li>
+                          <a class="navbar-brand" href="index.html">Fonctionnalités</a>
+                          <li class="nav-item">
+                              <a class="nav-link" href="contact.html">À propos</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="contact.html">Quaternion+</a>
+                          </li>
+                      </ul>
                   </div>
-            </div>
-        </div>
-    </nav>
-<h3 id="ti">Calcul scientifique pour physique</h3>  
+              </div>
+          </nav>
+          <div class="containerr">
+              <div class="background-glow glow-1"></div>
+              <div class="background-glow glow-2"></div>
+              
+              <div class="icons">
+                <!-- Beaker icon -->
+                <div class="icon" style="animation-delay: 0s;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M8 3v3m8-3v3M9 12h6m-6 3h6m2 3H7a2 2 0 0 1-2-2V5h14v11a2 2 0 0 1-2 2Z"/>
+                  </svg>
+                </div>
+                <!-- Calculator icon -->
+                <div class="icon" style="animation-delay: 0.2s;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="4" y="2" width="16" height="20" rx="2"/>
+                    <line x1="8" y1="6" x2="16" y2="6"/>
+                    <line x1="8" y1="10" x2="16" y2="10"/>
+                    <line x1="8" y1="14" x2="16" y2="14"/>
+                    <line x1="8" y1="18" x2="16" y2="18"/>
+                  </svg>
+                </div>
+                <!-- Atom icon -->
+                <div class="icon" style="animation-delay: 0.4s;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9 9 9 0 0 0-9 9 9 9 0 0 0 9 9z"/>
+                    <path d="M3 12h18"/>
+                  </svg>
+                </div>
+              </div>
+              <script>
+                  // Create floating particles
+                  function createParticles() {
+                    const container = document.querySelector('.container');
+                    for (let i = 0; i < 10; i++) {
+                      const particle = document.createElement('div');
+                      particle.className = 'particle';
+                      particle.style.left = Math.random() * 100 + '%';
+                      particle.style.top = Math.random() * 100 + '%';
+                      particle.style.animationDelay = (Math.random() * 2) + 's';
+                      container.appendChild(particle);
+                    }
+                  }
+              
+                  // Initialize particles on load
+                  window.addEventListener('load', createParticles);
+                </script>
+          
+              <h3 class="title">Calcul scientifique pour Physique</h3>
+              <div class="underline"></div>
+          </div>
 <div class="container">
     <h1 class="text-center">Force Électrostatique (Loi de Coulomb)</h1>
     <form id="coulombForm">
@@ -52,7 +105,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Calculer</button>
     </form>
-    <h2 class="mt-4">Résultat : <span id="coulombResult">-</span> N</h2>
+    <h2 class="mt-4">Résultat : <span id="coulombResult"></span>N</h2>
 </div>
 <script>
     // Force Électrostatique
@@ -70,7 +123,7 @@ document.getElementById('coulombForm').addEventListener('submit', function(event
     }
 
     const force = (k * Math.abs(q1) * Math.abs(q2)) / Math.pow(r, 2);
-    document.getElementById('coulombResult').textContent = force.toExponential(3) + " N";
+    document.getElementById('coulombResult').textContent = force.toExponential(3);
 });
 
 </script>
@@ -91,7 +144,7 @@ document.getElementById('coulombForm').addEventListener('submit', function(event
         </div>
         <button type="submit" class="btn btn-primary">Calculer</button>
     </form>
-    <h2 class="mt-4">Résultat : <span id="magneticResult">-</span> N</h2>
+    <h2 class="mt-4">Résultat : <span id="magneticResult"></span> N</h2>
 </div>
 <script>
     // Force Magnétique
@@ -108,7 +161,7 @@ document.getElementById('magneticForm').addEventListener('submit', function(even
     }
 
     const forceMag = Math.abs(q * v * B);
-    document.getElementById('magneticResult').textContent = forceMag.toExponential(3) + " N";
+    document.getElementById('magneticResult').textContent = forceMag.toExponential(3);
 });
 </script>
 
@@ -133,7 +186,7 @@ document.getElementById('magneticForm').addEventListener('submit', function(even
             </div>
             <button type="submit" class="btn btn-primary">Calculer</button>
         </form>
-        <h2 class="mt-4">Résultat : <span id="thermoResult">-</span> Joules</h2>
+        <h2 class="mt-4">Résultat : <span id="thermoResult"></span> Joules</h2>
     </div>
 
     <script>
@@ -193,11 +246,11 @@ document.getElementById('magneticForm').addEventListener('submit', function(even
         </p>
         <form id="quantumForm">
             <div class="form-group">
-                <label for="n1">Niveau quantique initial \( n_1 \) (entier positif) :</label>
+                <label for="n1">Niveau quantique initial (n1) (entier positif) :</label>
                 <input type="number" class="form-control" id="n1" placeholder="Ex : 2" min="1" step="1" required>
             </div>
             <div class="form-group">
-                <label for="n2">Niveau quantique final \( n_2 \) (entier positif) :</label>
+                <label for="n2">Niveau quantique final (n2) (entier positif) :</label>
                 <input type="number" class="form-control" id="n2" placeholder="Ex : 1" min="1" step="1" required>
             </div>
             <button type="submit" class="btn btn-primary">Calculer</button>
@@ -259,19 +312,19 @@ document.getElementById('magneticForm').addEventListener('submit', function(even
         <p>Calculez la fréquence de plasma et la conductivité d'un plasma à partir des paramètres fournis.</p>
         <form id="plasmaForm">
             <div class="form-group">
-                <label for="density">Densité d'électrons (\( n_e \)) en \( \text{m}^{-3} \) :</label>
+                <label for="density">Densité d'électrons ((ne)) en \( \text{m}^{-3} \) :</label>
                 <input type="number" class="form-control" id="density" placeholder="Ex : 1e19" required>
             </div>
             <div class="form-group">
-                <label for="relaxationTime">Temps de relaxation (\( \tau \)) en secondes :</label>
+                <label for="relaxationTime">Temps de relaxation (tau) en secondes :</label>
                 <input type="number" class="form-control" id="relaxationTime" placeholder="Ex : 1e-10" required>
             </div>
             <button type="submit" class="btn btn-primary">Calculer</button>
         </form>
         <h2 class="mt-4">Résultats :</h2>
         <ul>
-            <li><strong>Fréquence de Plasma (\( \omega_p \)) :</strong> <span id="plasmaFrequency">-</span> Hz</li>
-            <li><strong>Conductivité du Plasma (\( \sigma \)) :</strong> <span id="conductivity">-</span> S/m</li>
+            <li><strong>Fréquence de Plasma (omega p) :</strong> <span id="plasmaFrequency">-</span> Hz</li>
+            <li><strong>Conductivité du Plasma (sigma) :</strong> <span id="conductivity">-</span> S/m</li>
         </ul>
     </div>
 
